@@ -1,0 +1,183 @@
+////////////////// HOMEPAGE MAJOR FINDER //////////////////
+
+.uu-program-search-container
+  display: flex
+  flex-flow: row wrap
+  justify-content: center
+  align-items: center
+  background-color: $white
+  background-image: url('http://localhost/dev/homepage-standalone-build/major-finder/img/terrain-bkg.svg')
+  background-position: top left
+  background-repeat: repeat
+  background-size: auto
+  width: 100%
+  padding: 0px
+  font-family: $ff-body
+
+/* PROGRAM SEACH HEADER */
+.uu-program-seach-header
+  flex: 0 1 30%
+  margin: 0 2%
+  padding: 250px 0
+
+  h2
+    font-size: 52px
+    line-height: 54px
+    font-weight: 800
+    font-family: $ff-head
+    text-shadow: 2px 2px 0px $white
+    margin: 0px
+  p
+    font-size: 21px
+    font-weight: 700
+    font-family: $ff-head
+    text-shadow: 2px 2px 0px $white
+
+
+/* PROGRAM SEARCH FORM */
+.uu-program-search-form
+  flex: 0 1 30%
+  margin: 0 2%
+
+.uu-program-search-descprition
+  text-shadow: 2px 2px 0px $white
+
+.uu-program-search-form form
+.uu-program-select-wrapper
+  position: relative
+  margin-bottom: 15px
+  z-index: 1
+
+.uu-program-select-wrapper
+  &::before
+    content: '\f107'
+    font-family: $ff-icon
+    display: none
+    color: $black
+    pointer-events: none
+  svg
+    position: absolute
+    top: 20px
+    right: 20px
+    z-index: 2
+    pointer-events: none
+  &::after
+    position: absolute
+    top: 0
+    right: 0
+    border: 3px solid $black
+    z-index: 2
+    height: 100%
+    width: 50px
+    box-sizing: border-box
+    content: ''
+    pointer-events: none
+
+.uu-program-select-wrapper select
+  border: none
+  background-image: none
+  background-color: $white
+  -webkit-box-shadow: none
+  -moz-box-shadow: none
+  box-shadow: none
+  outline: none
+  -webkit-appearance: none
+  -moz-appearance: none
+  -ms-appearance: none
+  appearance: none
+  height: 54px
+  font-size: 16px
+  line-height: 16px
+  border: 3px solid $black
+  border-radius: 0px
+  width: 100%
+  padding: 15px 65px 15px 15px
+  box-sizing: border-box
+
+.uu-program-search-form
+  input
+    font-size: 16px
+    line-height: 16px
+    border: 3px solid $black
+    border-radius: 0px
+    width: 100%
+    padding: 15px 15px 15px 65px
+    box-sizing: border-box
+
+.search-input-container
+  position: relative
+  margin-bottom: 15px
+  z-index: 1
+
+  &::before
+    content: '\f002'
+    font-family: $ff-icon
+    display: none
+    color: $black
+    pointer-events: none
+  svg
+    position: absolute
+    top: 20px
+    left: 17px
+    z-index: 2
+    pointer-events: none
+  &::after
+    position: absolute
+    top: 0
+    left: 0
+    border: 3px solid $black
+    z-index: 2
+    height: 100%
+    width: 50px
+    box-sizing: border-box
+    content: ''
+    pointer-events: none
+
+
+.uu-program-search-form
+
+  button
+    display: block
+    background-color: $black
+    color: $white
+    font-size: 20px
+    font-weight: 400
+    line-height: 20px
+    padding: 25px 40px
+    width: 100%
+
+
+.uu-program-search-results-wrapper
+  display: flex
+  flex: 1 1 100%
+  text-align: center
+  max-width: 1230px
+  padding: 30px
+
+  ul
+    text-align: left
+    display: flex
+    flex-flow: row wrap
+    align-items: stretch
+    li
+      display: flex
+      flex: 0 1 23%
+      flex-flow: column nowrap
+      margin: 10px 1%
+      flex-flow: column wrap
+      box-sizing: border-box
+      background-color: $white
+      border: 3px solid $black
+      padding: 20px
+      font-size: 18px
+      line-height: 19px
+      font-weight: 800
+      font-family: $ff-head
+      color: $black
+      +shadow(0px, 10px, 20px, 0px, rgba(84, 117, 145, 0.1))
+      +transition(all, .3s)
+      &:hover, &:focus
+        cursor: pointer
+        transform: translateY(-1px)
+        border: 3px solid $uu_red
+        +shadow(0px, 20px, 30px, 0px, rgba(84, 117, 145, 0.2))

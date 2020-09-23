@@ -1,0 +1,130 @@
+////////////////// SEARCH //////////////////
+
+// SEARCH TOGGLE BTN
+.uu-search-toggle
+  border-radius: 0px
+  flex: 0 0 65px
+  align-self: stretch
+
+  .search-btn
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 100%
+    font-size: 24px
+    background-color: transparent
+    border: 0px
+    box-sizing: border-box
+    border-radius: 0px
+    +transition(all, .3s)
+    &:hover
+      cursor: pointer
+      background-color: $uu_red
+
+    &.search-open
+      background-color: $uu_red
+
+  +mobile
+    display: block
+    order: 1
+
+// SEARCH FORM
+.uu-search
+  display: none
+  flex-flow: row nowrap
+  justify-content: center
+  align-items: flex-start
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100vh
+  z-index: 1003
+  +transition(all, .3s)
+
+  +customMaxHeight(400px)
+    align-items: center
+
+  &.search-open
+    display: flex
+    @include animation('fadeIn .5s ease-out 1')
+
+  .uu-search-form
+    position: relative
+    display: flex
+    flex-flow: column nowrap
+    flex: 0 1 600px
+    padding: 0 30px
+    justify-content: center
+    align-items: center
+    text-align: center
+    top: 250px
+
+    +customMaxHeight(400px)
+      top: auto
+
+    .input-group
+      display: flex
+      flex-flow: row nowrap
+      justify-content: center
+      align-items: flex-end
+      width: 100%
+
+      .search-icon
+        flex: 0 0 65px
+        display: flex
+        flex-flow: column nowrap
+        justify-content: center
+        align-items: center
+        height: 100%
+        font-size: 40px
+        color: $white
+
+        +mobile
+          font-size: 30px
+
+      input
+        flex: 1 1 auto
+        color: $white
+        font-size: 32px
+        width: 100%
+        box-sizing: border-box
+        position: relative
+        background-color: transparent
+        border-radius: 0px
+        padding: 5px 0px
+        border: 0px
+        outline: none
+        border-bottom: 2px solid $white
+
+        +mobile
+          font-size: 21px
+
+    .form-powered-by
+      color: $white
+      font-size: 12px
+      display: flex
+      flex-flow: row nowrap
+      justify-content: center
+      align-items: center
+      opacity: .6
+      position: absolute
+      bottom: -35px
+      right: 30px
+      pointer-events: none
+
+      span
+        font-weight: 700
+        margin-right: 5px
+
+      img
+        width: 60px
+
+// SEARCH FADE IN ANIMATION
+@include keyframes(fadeIn)
+  0%
+    opacity: 0
+    top: 20px
+  100%
+    opacity: 1
+    top: 0

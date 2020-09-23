@@ -1,0 +1,78 @@
+////////////////// COMMENTS //////////////////
+
+.comments-area
+  margin: 30px
+  padding: 30px
+  border: 1px solid $light_gray
+
+  h2, h3
+    margin: 0px
+
+  .comment-list
+    margin: 30px auto
+    border-bottom: 1px solid $light_gray
+    padding-bottom: 30px
+    .comment
+      margin: 15px auto
+      .comment-body
+        .comment-meta
+          .comment-author
+            display: flex
+            flex-flow: row nowrap
+            justify-content: flex-start
+            align-items: center
+            img
+              border-radius: 50%
+              margin-right: 10px
+            .fn
+              margin-right: 5px
+          .comment-metadata
+            display: none
+        .comment-content
+          background-color: $light_gray
+          color: $uu_black
+          font-size: 14px
+          line-height: 1.5
+          padding: 5px 20px
+          border-radius: 8px
+        .reply
+          a
+            color: $text_color
+            font-size: 13px
+      & > ol.children
+        padding-left: 30px
+
+  .comment-form
+    display: flex
+    flex-flow: row wrap
+    margin: 0px
+
+    p
+      margin: 10px auto
+
+    .comment-notes
+      flex: 1 1 100%
+    .comment-form-comment
+      flex: 1 1 100%
+      textarea
+        width: 100%
+        border: 1px solid $border_color
+        box-sizing: border-box
+        padding: 10px
+    .comment-form-author, .comment-form-email
+      flex: 1 1 48%
+      label
+        display: block
+      input
+        width: 100%
+        border: 1px solid $border_color
+        box-sizing: border-box
+        padding: 10px
+    .comment-form-author
+      margin-right: 1%
+    .comment-form-email
+      margin-left: 1%
+    .comment-form-cookies-consent
+      flex: 1 1 100%
+    .form-submit
+      flex: 1 1 100%

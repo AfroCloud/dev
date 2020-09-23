@@ -1,0 +1,387 @@
+.uu-hp-marquee .slide::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  background-color: #000;
+  opacity: .5;
+  z-index: 1;
+}
+
+.uu-hp-marquee .slide .slide-content {
+  z-index: 2
+}
+
+
+.news-events-section .uu-3col-container {
+  max-width: 1180px;
+}
+
+
+
+/* Program/Major Search */
+.uu-program-search-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  background-image: url("https://3po.umc.utah.edu/wp-content/uploads/sites/47/2020/06/terrain-bkg-1.svg");
+  background-position: top left;
+  background-repeat: repeat;
+  background-size: auto;
+  width: 100%;
+  padding: 150px 0 !important;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+/* PROGRAM SEACH HEADER */
+.uu-program-seach-header {
+  flex: 0 1 30%;
+  margin: 0 2%;
+  padding: 0px !important;
+}
+.uu-program-seach-header h2 {
+  font-size: 52px;
+  line-height: 54px;
+  font-weight: 800;
+  font-family: "Montserrat", sans-serif;
+  text-shadow: 2px 2px 0px #FFFFFF;
+  margin: 0px;
+}
+.uu-program-seach-header p {
+  font-size: 21px;
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+  text-shadow: 2px 2px 0px #FFFFFF;
+}
+
+/* PROGRAM SEARCH FORM */
+.uu-program-search-form {
+  flex: 0 1 30%;
+  margin: 0 2%;
+}
+
+.uu-program-search-descprition {
+  text-shadow: 2px 2px 0px #FFFFFF;
+}
+
+.uu-program-select-wrapper {
+  position: relative;
+  margin-bottom: 15px;
+  z-index: 1;
+}
+
+.uu-program-select-wrapper::before {
+  content: "";
+  font-family: "Font Awesome 5 Pro";
+  display: none;
+  color: #000000;
+  pointer-events: none;
+}
+.uu-program-select-wrapper svg {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 2;
+  pointer-events: none;
+}
+.uu-program-select-wrapper::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 3px solid #000000;
+  z-index: 2;
+  height: 100%;
+  width: 50px;
+  box-sizing: border-box;
+  content: "";
+  pointer-events: none;
+}
+
+.uu-program-select-wrapper select {
+  border: none;
+  background-image: none;
+  background-color: #FFFFFF;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  height: 54px;
+  font-size: 16px;
+  line-height: 16px;
+  border: 3px solid #000000;
+  border-radius: 0px;
+  width: 100%;
+  padding: 15px 65px 15px 15px;
+  box-sizing: border-box;
+}
+
+.uu-program-search-form input {
+  font-size: 16px;
+  line-height: 16px;
+  border: 3px solid #000000;
+  border-radius: 0px;
+  width: 100%;
+  padding: 15px 15px 15px 65px;
+  box-sizing: border-box;
+}
+
+.search-input-container {
+  position: relative;
+  margin-bottom: 15px;
+  z-index: 1;
+}
+.search-input-container::before {
+  content: "";
+  font-family: "Font Awesome 5 Pro";
+  display: none;
+  color: #000000;
+  pointer-events: none;
+}
+.search-input-container svg {
+  position: absolute;
+  top: 20px;
+  left: 17px;
+  z-index: 2;
+  pointer-events: none;
+}
+.search-input-container::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 3px solid #000000;
+  z-index: 2;
+  height: 100%;
+  width: 50px;
+  box-sizing: border-box;
+  content: "";
+  pointer-events: none;
+}
+
+.uu-program-search-form button {
+  display: block;
+  background-color: #000000;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 20px;
+  padding: 25px 40px;
+  width: 100%;
+}
+
+.uu-program-search-results-wrapper {
+  display: flex;
+  flex: 1 1 100%;
+  text-align: center;
+  max-width: 1230px;
+  padding: 30px;
+}
+.uu-program-search-results-wrapper ul {
+  text-align: left;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: stretch;
+}
+.uu-program-search-results-wrapper ul li {
+  display: flex;
+  flex: 0 1 23%;
+  flex-flow: column nowrap;
+  margin: 10px 1%;
+  flex-flow: column wrap;
+  box-sizing: border-box;
+  background-color: #FFFFFF;
+  border: 3px solid #000000;
+  padding: 20px;
+  font-size: 18px;
+  line-height: 19px;
+  font-weight: 800;
+  font-family: "Montserrat", sans-serif;
+  color: #000000;
+  -webkit-box-shadow: 0px 10px 20px 0px rgba(84, 117, 145, 0.1);
+  -moz-box-shadow: 0px 10px 20px 0px rgba(84, 117, 145, 0.1);
+  box-shadow: 0px 10px 20px 0px rgba(84, 117, 145, 0.1);
+  -webkit-transition: all, 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.uu-program-search-results-wrapper ul li:hover, .uu-program-search-results-wrapper ul li:focus {
+  cursor: pointer;
+  transform: translateY(-1px);
+  border: 3px solid #C51230;
+  -webkit-box-shadow: 0px 20px 30px 0px rgba(84, 117, 145, 0.2);
+  -moz-box-shadow: 0px 20px 30px 0px rgba(84, 117, 145, 0.2);
+  box-shadow: 0px 20px 30px 0px rgba(84, 117, 145, 0.2);
+}
+
+
+@media only screen and (max-width: 1024px) {
+  .uu-program-search-container {
+    box-sizing: border-box;
+    flex-flow: column nowrap !important;
+    padding: 100px 20px !important;
+  }
+
+  .uu-program-seach-header {
+    text-align: center !important;
+  }
+
+  .uu-program-search-results-wrapper {
+    padding: 30px 10px !important;
+  }
+
+  .uu-program-search-results-wrapper ul li {
+    flex: 1 1 48% !important;
+  }
+}
+
+
+/* Individual Program */
+#uuReturnedResultsList .uu-card {
+  flex-flow: column nowrap;
+}
+#uuReturnedResultsList .uu-card .uu-card-img {
+  position: relative;
+  display: flex;
+  flex: 1 1 100%;
+  height: 250px;
+  min-height: 250px;
+  order: 1;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#uuReturnedResultsList .uu-card .uu-card-img::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  background-color: #000;
+  opacity: .3;
+  z-index: 1;
+}
+
+.major-finder-btn {
+  background-color: #000 !important;
+}
+
+
+ #uuReturnedResultsList .uu-card .uu-card-img h1 {
+   color: #FFF;
+   z-index: 2;
+ }
+
+#uuReturnedResultsList .uu-card-details {
+  flex: 1 1 100%;
+  order: 2;
+}
+#uuReturnedResultsList .uu-card-details .uu-card-body {}
+
+
+/* Social Tabs */
+.social-tabs-container {
+  max-width: 1180px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.social-tab-buttons button {
+    background: #fff;
+    color: #c00;
+    border: none;
+    height: 60px;
+    width: 60px;
+    font-size: 30px;
+    line-height: 30px;
+    padding: 10px;
+    border-radius: 50px;
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+    margin: 0px 5px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.social-tab-buttons button:hover {
+    cursor: pointer;
+    background: #c00;
+    color: #fff;
+}
+.social-tab-buttons button.active {
+    background: #c00;
+    color: #fff;
+}
+.social-tabs {
+    margin: 30px auto;
+}
+.social-tab {
+    min-height: 400px;
+}
+.social-tab.hidden {
+    display: none;
+}
+
+.social-tab {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+}
+
+.social-tab::before {
+  box-sizing: border-box;
+  display: block;
+  content: '';
+  padding-top: 56.25%;
+}
+
+.social-tab iframe {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media only screen and (max-width: 900px) {
+
+  .uu-3col-container .uu-card {
+    flex: 0 1 calc(50% - 15px) !important;
+    flex-flow: column nowrap !important;
+  }
+
+  .uu-3col-container .uu-card .uu-card-img {
+    flex: 0 0 250px !important;
+    height: 250px !important;
+    min-height: 250px !important;
+    order: 1 !important;
+  }
+
+  .uu-card-details {
+    flex: 1 1 auto !important;
+    order: 2 !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .uu-3col-container .uu-card {
+    flex: 0 1 100% !important;
+  }
+}

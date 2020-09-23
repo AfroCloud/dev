@@ -1,0 +1,472 @@
+////////////////// HEADER //////////////////
+
+// MAIN HEADER
+.uu-header
+  display: flex
+  flex-flow: column nowrap
+  position: relative
+  width: 100%
+  +transition(all, .3s)
+  z-index: 1111
+
+// TOP HEADER (DEAD)
+// .uu-top-header
+//   display: flex
+//   flex-flow: row nowrap
+//   align-items: flex-start
+//   justify-content: flex-start
+//   position: relative
+//   width: 100%
+//   background-color: #E2E2E2
+//   color: $uu_gray
+//   font-size: 12px
+//   line-height: 27px
+//   font-weight: 600
+//
+//   +mobile
+//     display: none
+//
+//   ul
+//     text-align: left
+//     display: flex
+//     flex-flow: row wrap
+//     li
+//       flex: 0 1 auto
+//       a, a:visited
+//         color: $uu_gray
+//         text-decoration: none
+//         text-transform: uppercase
+//         padding: 6px 15px
+//         +transition(all, .3s)
+//         &:hover, &:focus
+//           background-color: $uu_red
+//           color: $white
+//       &:first-child
+//         a
+//           background-color: $uu_red
+//           color: $white
+//
+//   .uu-top-header-nav
+//     flex: 1 1 25%
+//
+//   .uu-top-header-search-btn
+//     position: relative
+//     flex: 0 1 250px
+//     text-align: right
+//     &::before
+//       display: none
+//       content: '\f002'
+//       font-family: $ff-icon
+//       color: $uu_gray
+//       font-weight: 900
+//     svg
+//       position: absolute
+//       top: 8px
+//       right: 6px
+//       z-index: 3
+//
+//     .uu-top-header-search-input
+//       position: relative
+//       border-radius: 0px
+//       padding: 6px
+//       border: 0px
+//       width: 250px
+//       z-index: 2
+
+// ALERT BAR
+.uu-alert-bar
+  display: flex
+  flex-flow: row nowrap
+  align-items: center
+  justify-content: center
+  width: 100%
+  padding: 5px 20px
+  font-size: 13px
+  font-weight: 600
+  box-sizing: border-box
+  background-color: $uu_red
+  border-bottom: 1px solid #CC0000
+  color: $white
+
+  a
+    color: $white
+    opacity: 1
+    text-decoration: none
+    +transition(all, .3s)
+
+
+    &:hover
+      opacity: .8
+      text-decoration: underline
+
+      .fa-long-arrow-right
+        margin-left: 8px
+
+  p
+    max-width: 800px
+    margin: 0px auto
+    padding: 0px
+
+    svg
+      margin-right: 5px
+
+    .fa-long-arrow-right
+      margin-right: 0
+      margin-left: 5px
+      +transition(all, .3s)
+
+
+
+
+// BOTTOM HEADER
+.uu-bottom-header
+  display: flex
+  flex-flow: row nowrap
+  align-items: center
+  justify-content: flex-start
+  position: relative
+  width: 100%
+  background-color: $uu_gray
+  color: $white
+
+  .uu-header-logo
+    flex: 0 1 178px
+    height: 38px
+    margin: 15px
+    a
+      display: block
+      height: 38px
+      width: 100%
+      background-image: url(../img/universityofutah.svg)
+      background-repeat: no-repeat
+      background-position: center left
+      background-size: contain
+      +transition(all, .3s)
+
+      +customMax(1260px)
+        background-image: url(../img/blocku.svg)
+
+      +mobile
+        background-image: url(../img/blocku.svg)
+        background-position: center center
+
+    +tablet
+      flex: 1 1 40px
+
+    +mobile
+      order: 2
+
+
+  .uu-header-nav
+    flex: 1 1 auto
+    text-align: right
+    height: 100%
+
+    +tablet
+      display: none
+
+    ul
+      display: flex
+      flex-flow: row wrap
+      justify-content: flex-end
+      align-items: stretch
+      li
+        position: relative
+        a, a:visited
+          display: block
+          box-sizing: border-box
+          font-family: $ff-head
+          font-size: 14px
+          line-height: 14px
+          font-weight: 600
+          text-transform: uppercase
+          text-decoration: none
+          color: $white
+          padding: 30px 15px
+          height: 100%
+          opacity: .85
+          +transition(all, .3s)
+
+          &:hover, &:focus
+            opacity: 1
+            background-color: $uu_red
+
+          +customMax(1260px)
+            font-size: 13px
+            padding: 20px 15px
+
+        &.current-menu-item
+          & > a
+            box-shadow: 0 4px 0 $uu_red
+
+        // CHILDREN
+        &.menu-item-has-children
+          &:hover
+            ul
+              display: flex
+        ul
+          display: none
+          flex-flow: column nowrap
+          justify-content: flex-start
+          align-items: flex-start
+          position: absolute
+          top: 74px
+          left: 0
+          width: 200px
+          min-width: 100%
+          background-color: $uu_black
+          text-align: left
+          li
+            flex: 1 1 auto
+            position: relative
+            width: 100%
+            a
+              color: $white
+              display: block
+              box-sizing: border-box
+              font-size: 12px
+              line-height: 15px
+              padding: 10px 15px
+              height: 100%
+              width: 100%
+
+              &:hover, &:focus
+                box-shadow: 0 0 0 $uu_red
+
+// FIXED
+.uu-header.fixed
+  position: fixed
+  top: 0
+  left: 0
+  +shadow(0px, 10px, 20px, 0px, rgba(0, 0, 0, 0.1))
+
+
+// SIDENAV TOGGLE BTN (HAMBURGER MENU)
+.uu-sidenav-toggle, .uu-mobile-sidenav-toggle
+  flex: 0 0 65px
+  height: 74px
+  align-self: stretch
+  background-color: transparent
+  +transition(all, .3s)
+  &:hover
+    background-color: $uu_red
+
+  +mobile
+    order: 3
+
+  .hamburger
+    position: relative
+    top: 10px
+    padding: 15px 15px
+    display: inline-block
+    cursor: pointer
+    transition-property: opacity, filter
+    transition-duration: 0.15s
+    transition-timing-function: linear
+    font: inherit
+    color: inherit
+    text-transform: none
+    background-color: transparent
+    border: 0
+    margin: 0
+    overflow: visible
+    &:hover
+      opacity: 1
+    &.sidenav-open:hover
+      opacity: 1
+
+.hamburger.sidenav-open .hamburger-inner,
+.hamburger.sidenav-open .hamburger-inner::before,
+.hamburger.sidenav-open .hamburger-inner::after
+  background-color: $white
+
+.hamburger-box
+  width: 40px
+  height: 24px
+  display: inline-block
+  position: relative
+
+.hamburger-inner
+  display: block
+  top: 50%
+  margin-top: -2px
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after
+  width: 40px
+  height: 2px
+  background-color: $white
+  border-radius: 2px
+  position: absolute
+  transition-property: transform
+  transition-duration: 0.15s
+  transition-timing-function: ease
+.hamburger-inner::before, .hamburger-inner::after
+  content: ''
+  display: block
+.hamburger-inner::before
+  top: -10px
+.hamburger-inner::after
+  bottom: -10px
+
+.uu-hamburger .hamburger-inner
+  top: 2px
+  transition-duration: 0.275s
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55)
+.uu-hamburger .hamburger-inner::before
+  top: 10px
+  transition: opacity 0.125s 0.275s ease
+.uu-hamburger .hamburger-inner::after
+  top: 20px
+  transition: transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+
+// IF SIDENAV IS OPEN
+.sidenav-open
+  .uu-sidenav-toggle
+    background-color: $uu_red
+.uu-hamburger.sidenav-open .hamburger-inner
+  transform: translate3d(0, 10px, 0) rotate(135deg)
+  transition-delay: 0.075s
+.uu-hamburger.sidenav-open .hamburger-inner::before
+  transition-delay: 0s
+  opacity: 0
+.uu-hamburger.sidenav-open .hamburger-inner::after
+  transform: translate3d(0, -20px, 0) rotate(-270deg)
+  transition-delay: 0.075s
+
+// ALT COLORS
+// WHITE
+.uu-header.white
+  .uu-bottom-header
+    background-color: $white
+    color: $uu_gray
+    .uu-header-nav
+      ul
+        li
+          a, a:visited
+            color: $uu_gray
+            &:hover, &:focus
+              color: $white
+              background-color: $uu_red
+              box-shadow: 0 4px 0 $uu_red
+          &.menu-item-has-children
+            ul
+              li
+                a
+                  color: $white
+    .uu-sidenav-toggle
+      &:focus
+        outline: 1px dotted $white
+      .hamburger
+        .hamburger-inner,
+        .hamburger-inner::before,
+        .hamburger-inner::after
+          background-color: $uu_gray
+      &:hover
+        .hamburger,
+          .hamburger-inner,
+          .hamburger-inner::before,
+          .hamburger-inner::after
+            background-color: $white
+
+      .hamburger.sidenav-open .hamburger-inner,
+      .hamburger.sidenav-open .hamburger-inner::before,
+      .hamburger.sidenav-open .hamburger-inner::after
+        background-color: $white
+
+
+  .uu-header-logo
+    a
+      background-image: url(../img/universityofutah_dark.svg)
+
+// RED
+.uu-header.red
+  .uu-bottom-header
+    background-color: $uu_red
+    color: $white
+    .uu-header-nav
+      ul
+        li
+          a, a:visited
+            color: $white
+            &:hover, &:focus
+              color: $white
+              background-color: $dark_red
+              box-shadow: 0 4px 0 $dark_red
+          &.current-menu-item
+            & > a
+              box-shadow: 0 4px 0 $dark_red
+    .uu-sidenav-toggle
+      &:hover
+        background-color: $dark_red
+        box-shadow: 0 4px 0 $dark_red
+  .uu-header-logo
+    a
+      background-image: url(../img/universityofutah_white.svg)
+
+// TRANSPARENT
+.uu-header.transparent
+  +shadow(0px, 0px, 0px, 0px, rgba(0, 0, 0, 0))
+
+  .uu-bottom-header
+    background-color: transparent
+    color: $white
+
+// SHIRNK
+.uu-header.shrink
+  .uu-header-logo
+    a
+      width: 70%
+
+  .uu-header-nav
+    ul
+      li
+        a
+          font-size: 12px
+
+
+
+// MOBILE QUICK NAV (HOME PAGE ONLY)
+.uu-mobile-quick-nav
+  display: none
+  position: fixed
+  bottom: 0
+  left: 0
+  width: 100%
+  background-color: $white
+  z-index: 100
+  ul
+    display: flex
+    flex-flow: row nowrap
+    justify-content: center
+    align-items: stretch
+    li
+      flex: 1 1 33.333%
+      border: 1px solid $light_gray
+      border-collapse: collapse
+      a
+        display: flex
+        flex-flow: column nowrap
+        justify-content: center
+        align-content: center
+        text-align: center
+        text-decoration: none
+        text-transform: uppercase
+        color: $uu_gray
+        font-size: 16px
+        padding: 15px
+        background-color: $white
+        +transition(all, .3s)
+        &:first-child
+          border-left: 0px
+        &:last-child
+          border-right: 0px
+        svg
+          margin: 5px auto
+          font-size: 40px
+          font-weight: 700
+          +transition(all, .3s)
+        &:hover
+          background-color: $light_gray
+          svg
+            transform: translateY(-2px)
+  +mobile
+    display: block

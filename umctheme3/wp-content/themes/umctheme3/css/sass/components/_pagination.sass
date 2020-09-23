@@ -1,0 +1,45 @@
+////////////////// PAGINATION //////////////////
+
+.pagination
+  display: flex
+  justify-content: center
+  align-items: center
+  text-align: center
+  margin: 30px auto
+  font-size: 13px
+  text-transform: uppercase
+  .screen-reader-text
+    display: none
+  .nav-links
+    display: flex
+    flex-flow: row nowrap
+    background-color: $white
+    border-radius: 4px
+    border: 1px solid $off_white
+    .page-numbers
+      position: relative
+      box-sizing: border-box
+      padding: 10px
+      border-right: 1px solid $off_white
+      +transition(all, .3s)
+      &.current, &:hover
+        background-color: $off_white
+        &::before
+          display: none
+          content: '\f0d8'
+          font-family: $ff-icon
+          font-weight: 900
+        svg
+          font-size: 20px
+          color: $off_white
+          position: absolute
+          top: -14px
+          left: 0
+          right: 0
+          margin: 0px auto
+      &:first-child
+        padding-left: 15px
+      &:last-child
+        padding-right: 15px
+    .prev
+    .next

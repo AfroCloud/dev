@@ -1,0 +1,40 @@
+////////////////// MAIN //////////////////
+
+// NORMALIZE
+@import components/_normalize
+
+// FONTS
+@import url('https://fonts.googleapis.com/css?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900|Roboto+Slab:wght@300;400;500;600;700;800;900|Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900')
+@font-face
+  font-family: 'Vitesse'
+  src: url('../fonts/Vitesse-Bold.woff2') format('woff2')
+  src: url('../fonts/Vitesse-Bold.woff') format('woff')
+
+// MODULES
+@import modules/variables
+@import modules/mixins
+
+// COMPONENTS
+@import components/_buttons
+@import components/_cards
+@import components/_typo
+@import components/_header
+@import components/_search
+@import components/_footer
+@import components/_sidenav
+@import components/_breadcrumbs
+@import components/_pagination
+@import components/_subnav
+@import components/_comments
+@import components/_admin_bar
+@import components/_accessibility_bar
+@import components/_global
+
+// HOMEPAGE SPECIFIC
+@import components/_hp_marquee
+@import components/_hp_major_finder
+
+// PLUGIN OVERRIDES
+@import components/overrides/_siteorigin
+@import components/overrides/_formidable
+@import components/overrides/_flickity

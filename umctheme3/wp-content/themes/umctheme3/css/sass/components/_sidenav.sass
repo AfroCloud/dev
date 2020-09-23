@@ -1,0 +1,146 @@
+////////////////// SIDENAV //////////////////
+
+.uu-sidenav
+  position: fixed
+  background-color: $uu_black
+  color: $white
+  width: 350px
+  height: 100%
+  top: 0
+  bottom: 0
+  right: -350px
+  z-index: 999
+  overflow-x: hidden
+  overflow-y: auto
+  backface-visibility: hidden
+  box-shadow: inset 10px 0px 15px -10px rgba(0,0,0,0.75)
+  +transition(all, .3s)
+
+  &.sidenav-open
+    right: 0
+
+  +mobile
+    &.sidenav-open
+      z-index: 9999
+      width: 100%
+      .uu-sidenav-header
+        .uu-sidenav-header-logo
+          a
+            img
+              margin: 0px auto
+              max-width: 150px
+
+  // SIDENAV HEADER
+  .uu-sidenav-header
+    text-align: center
+    margin: 20px auto
+    .uu-sidenav-header-logo
+      a
+        img
+          margin: 0px auto
+          max-width: 200px
+          +transition(all, .3s)
+
+  // SIDENAV MENU BLOCKS
+  .uu-sidenav-menu-block
+    padding-left: 50px
+    margin: 50px 0
+
+    & > h3
+      font-family: $ff-head
+      font-size: 14px
+      font-weight: 800
+      line-height: 16px
+      margin: 0px
+      color: $white
+      text-transform: uppercase
+
+    .sidenav-menu
+      li
+        position: relative
+        border-bottom: 1px solid #4B4B4B
+        +transition(all, .3s)
+        h3
+          a
+            padding-right: 50px!important
+            &:hover
+              background-color: $uu_gray
+              padding-left: 15px
+        // IF CURRENT PAGE
+        &.current-menu-item
+          &::before
+            position: absolute
+            width: 10px
+            height: 10px
+            border-radius: 50%
+            top: calc(50% - 5px)
+            left: -25px
+            background-color: #c2c2c2
+            content: ''
+
+        h3
+          font-size: 13px
+          font-weight: 600
+          line-height: 16px
+          margin: 0px
+          a
+            display: block
+            color: $white
+            text-decoration: none
+            padding: 10px 0
+            +transition(all, .3s)
+        // CHILDREN
+        &.menu-item-has-children
+          position: relative
+          &::after
+            display: none
+            content: '\f107'
+            font-family: $ff-icon
+          svg
+            position: absolute
+            top: 11px
+            right: 11px
+            pointer-events: none
+            +transition(all, .3s)
+          &.nav-open
+            & > svg
+              transform: rotate(180deg)
+
+          ul.sub-menu
+            display: none
+            background-color: #292222
+            li
+              &:first-child
+                border-top: 1px solid #4B4B4B
+              &:last-child
+                border-bottom: 0px
+              h3
+                a
+                  padding-left: 20px
+                  &:hover
+                    padding-left: 25px
+              // GRANDCHILDREN
+              &.menu-item-has-children
+                ul.sub-menu
+                  li
+                    &:first-child
+                      border-top: 1px solid #4B4B4B
+                    &:last-child
+                      border-bottom: 0px
+                    h3
+                      a
+                        padding-left: 25px
+                        &:hover
+                          padding-left: 30px
+
+// MOBILE SIDENAV TOGGLE BTN
+.uu-mobile-sidenav-toggle
+  display: none
+  position: absolute
+  top: 0
+  left: 0
+  width: 75px
+  height: 74px
+
+  +mobile
+    display: block

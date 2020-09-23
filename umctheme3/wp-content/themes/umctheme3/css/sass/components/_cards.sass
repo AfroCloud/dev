@@ -1,0 +1,151 @@
+////////////////// CARDS //////////////////
+
+.uu-2col-container
+  display: flex
+  flex-flow: row wrap
+  justify-content: space-between
+  margin: 30px auto
+
+  .uu-card
+    +flex(1, 1, 50%)
+
+.uu-3col-container
+  display: flex
+  flex-flow: row wrap
+  justify-content: space-between
+  margin: 30px auto
+
+  .uu-card
+    +flex(0, 1, 33.333%)
+
+.uu-4col-container
+  display: flex
+  flex-flow: row wrap
+  justify-content: space-between
+  margin: 30px auto
+
+  .uu-card
+    +flex(1, 1, 25%)
+
+.uu-card
+  display: flex
+  flex: 1 1 auto
+  flex-flow: column wrap
+  box-sizing: border-box
+  background-color: $white
+  overflow: hidden
+  overflow-wrap: anywhere
+  margin-bottom: $gutter
+  +shadow(0px, 10px, 20px, 0px, rgba(84, 117, 145, 0.1))
+  +transition(all, .3s)
+  &:hover, &:focus
+    +shadow(0px, 20px, 30px, 0px, rgba(84, 117, 145, 0.2))
+
+  &:first-child
+    display: flex
+    flex-flow: row nowrap
+    +flex(1, 1, 100%)
+    min-height: 350px
+    .uu-card-details
+      flex: 1 1 50%
+      order: 1
+      .uu-card-body
+        h3.uu-card-title
+          font-size: 22px
+          line-height: 24px
+    .uu-card-img
+      flex: 1 1 50%
+      height: 100%
+      min-height: 350px
+      order: 2
+
+
+  .entry-header
+    .entry-title
+
+
+
+
+  .uu-card-img
+    width: 100%
+    height: 250px
+    background-position: center center
+    background-repeat: no-repeat
+    background-size: cover
+    order: 1
+
+  .uu-card-details
+    flex: 1 1 auto
+    position: relative
+    width: 100%
+    padding-bottom: 70px
+    order: 2
+
+    .uu-card-body
+      padding: 30px
+
+      h3.uu-card-title
+        font-size: 18px
+        line-height: 21px
+        margin-bottom: 0px
+        font-weight: 600
+        a
+          color: $uu_black
+      .uu-card-cats
+        display: flex
+        flex-flow: row nowrap
+        font-size: 13px
+        font-weight: 400
+        overflow: auto
+        box-sizing: border-box
+        -ms-overflow-style: none
+        &::-webkit-scrollbar
+          display: none
+
+        span
+          flex: 0 0 auto
+          margin-right: 5px
+
+        .post-categories
+          display: flex
+          flex-flow: row nowrap
+          flex: 1 1 auto
+
+          li
+            flex: 0 0 auto
+            margin-right: 5px
+            &:last-child
+              margin-right: 0
+
+            a
+              +transition(all, .15s)
+              &:hover, &:focus
+                color: $dark_red
+
+
+  .uu-card-footer
+    display: flex
+    flex-flow: row nowrap
+    position: absolute
+    bottom: 0
+    width: 100%
+    padding: 10px
+    box-sizing: border-box
+    border-top: 1px solid #F7F9FB
+    font-size: 13px
+    color: #585858
+
+    .uu-card-social
+      flex: 1 1 50%
+      text-align: left
+      a
+        color: #585858
+        margin: 0px 5px
+        +transition(all, .3s)
+        &:hover
+          color: $uu_red
+          svg
+            transform: scale(1.5)
+    .uu-card-date
+      flex: 1 1 50%
+      text-align: right

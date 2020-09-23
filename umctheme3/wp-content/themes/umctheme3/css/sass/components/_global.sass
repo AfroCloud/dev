@@ -1,0 +1,262 @@
+////////////////// GLOBAL //////////////////
+
+html
+  overflow-x: hidden
+  scroll-behavior: smooth
+
+  // IF SIDENAV IS OPEN
+  &.sidenav-open
+    overflow-y: hidden
+
+  // IF SEACH IS OPEN
+  &.search-open
+    overflow-y: hidden
+
+  // IF ACCESSIBILITY BAR IS OPEN
+  &.acc-bar-open
+    .uu-header.fixed
+      padding-top: 58px
+
+    +tablet
+      .uu-header.fixed
+        padding-top: 0
+
+
+body
+  color: $text_color
+  font-family: $ff-body
+  font-weight: 400
+  font-size: 17px
+  line-height: 28px
+  text-rendering: optimizelegibility
+  -webkit-font-smoothing: antialiased
+
+a
+  color: $uu-red
+  text-decoration: none
+
+  &:focus
+    outline: 1px dotted $uu_red
+
+  &.uu-link
+    position: relative
+    &::after
+      font-family: $ff-icon
+      content: '\f30b'
+      display: none
+    svg
+      position: absolute
+      top: 3px
+      right: -20px
+      +transition(all, .3s)
+    &:hover
+      svg
+        right: -25px
+
+
+.uu-page-container
+  position: relative
+  top: 0
+  left: 0
+  +transition(all, .3s)
+
+  &::after
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    content: ''
+    background: $uu-black
+    opacity: 0
+    z-index: 1002
+    pointer-events: none
+    +transition(all, .3s)
+
+  // IF SIDENAV IS OPEN
+  &.sidenav-open
+    left: -350px
+
+    &::after
+      opacity: .8
+
+    .uu-header
+      left: -350px
+
+  // IF SEARCH IS OPEN
+  &.search-open
+
+    &::after
+      opacity: .9
+
+
+  +mobile
+    &.sidenav-open
+      left: 0
+      .uu-header
+        left: 0
+
+
+
+.content-area
+  min-height: 400px
+  // +transition(all, .3s)
+
+  &.error-404
+    background-color: $gray
+
+    .site-main
+      display: flex
+      align-items: center
+      justify-content: center
+
+
+// IF SUBNAV IS ACTIVE
+article
+  &.subnav-active
+    display: flex
+    flex-flow: row wrap
+    .entry-header
+      flex: 1 1 100%
+    .entry-content
+      flex: 1 1 0
+    .uu-subnav-container
+      display: flex
+    .entry-footer
+      flex: 1 1 100%
+
+
+main
+  max-width: 1160px
+  margin: 0px auto
+
+  &.blog-main
+    padding: 30px 0
+
+
+// ENTRY CONTENT
+.entry-content
+  padding: 30px
+
+// ENTRY & PAGE HEADER
+.entry-header, .page-header
+  margin: 0px 30px
+  padding-top: 30px
+
+  .entry-title
+    margin-bottom: 0px
+
+.entry-footer
+  display: none
+
+
+
+// GLOBAL FORMS
+label
+  font-weight: 700
+  color: $uu_black
+.required
+  color: $uu_red
+
+
+
+// SECTIONS
+.uu-section
+  padding: 80px 30px
+
+  .section-title
+    &.center
+      text-align: center
+    h2
+      span
+        display: block
+        font-size: 18px
+        color: #585858
+
+
+// TABLES
+table
+  border-collapse: collapse
+  box-sizing: border-box
+  background-color: $white
+  margin: 30px 0
+  tr
+    th
+      padding: 10px 20px
+      font-weight: 700
+      text-align: left
+  tbody
+    tr
+      border: 1px solid $border_color
+      td
+        padding: 10px 20px
+
+
+// IMG CAPTIONS
+figure
+  display: flex
+  flex-flow: column nowrap
+  margin: 0
+  padding: 0
+  max-width: 100%
+  img
+    flex: 0 0 auto
+    margin: 0
+  figcaption
+    flex: 0 0 auto
+    margin: 0
+    background-color: $light_gray
+    font-size: 13px
+    padding: 5px 10px
+    border-bottom: 1px solid $border_color
+
+  &.alignleft
+    position: relative
+    float: left
+    left: -15px
+    margin-right: 10px
+    margin-bottom: 10px
+  &.alignright
+    position: relative
+    float: right
+    right: -15px
+    margin-left: 10px
+    margin-bottom: 10px
+
+
+// 404
+.error-404-container
+  position: relative
+  text-align: center
+  box-sizing: border-box
+  margin: 60px auto
+  background-color: $white
+  padding: 60px
+  border-radius: 10px
+  +shadow(0px, 20px, 30px, 0px, rgba(84, 117, 145, 0.2))
+
+  span
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    width: 100%
+    text-align: center
+    font-size: 13px
+    font-weight: 700
+    box-sizing: border-box
+    padding: 10px 15px
+    border-bottom: 1px solid $border_color
+
+  h1
+    font-size: 120px
+    color: $uu_black
+    line-height: 1
+    margin: 15px 0 0 0
+    padding: 0
+    font-weight: 800
+
+  p
+    color: $text_color
+    font-size: 24px
+    margin: 0 0 30px 0

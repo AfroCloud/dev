@@ -1,0 +1,363 @@
+////////////////// HOMEPAGE MARQUEE //////////////////
+
+// MARQUEE CAROUSEL
+.uu-hp-marquee-container
+  position: relative
+  width: 100%
+  height: 80vh
+  min-height: 650px
+
+
+.uu-hp-marquee
+  position: relative
+  width: 100%
+  height: 100%
+
+  .slide
+    display: flex
+    justify-content: center
+    align-items: center
+    align-content: center
+    text-align: center
+    position: relative
+    width: 100%
+    height: 80vh
+    min-height: 650px
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center
+    z-index: 101
+
+    .slide-content
+      position: relative
+      color: $white
+      top: -80px
+
+      h1, h2
+        color: $white
+        margin: 0px
+
+      h1
+        font-weight: 800
+
+      h2
+        font-size: 28px
+        line-height: 30px
+
+      a
+        margin: 30px auto
+
+
+.uu-hp-marquee-tabs
+  position: absolute
+  bottom: 0
+  left: 0
+  right: 0
+  height: auto
+  width: 100%
+  display: flex
+  flex-flow: row nowrap
+  justify-content: center
+  align-items: center
+  align-content: center
+  color: $white
+  border-top: 1px solid rgba(214,214,214, .2)
+  z-index: 102
+
+  &::before
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    width: 100%
+    height: 100%
+    content: ''
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0) 20%, rgba(0,0,0,1) )
+    opacity: 1
+    z-index: 101
+
+  .uu-link
+    color: $white
+    text-decoration: underline
+
+
+.up-next-title
+  h4
+    font-size: 70px
+    line-height: 70px
+    font-weight: 800
+    color: $white
+    margin-bottom: 0px
+    order: 1
+
+
+.up-next-tab, .up-next-title
+  position: relative
+  width: 25%
+  height: 200px
+  padding: 50px
+  z-index: 102
+
+  &.hidden
+    display: none
+
+
+.up-next-tab::after
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  content: ''
+  height: 100%
+  width: 100%
+  opacity: 0
+  z-index: 101
+  @include transition(opacity, 0.8s)
+
+
+.up-next-tab
+  &.active
+    position: relative
+
+    &::before
+      position: absolute
+      top: -1px
+      left: 0
+      content: ''
+      height: 100%
+      width: 100%
+      border-top: 3px solid $uu_red
+
+  &:focus
+    outline: 1px dotted $white
+
+  &:hover
+    cursor: pointer
+    &::after
+      background: rgba(0,0,0, 1)
+      opacity: .25
+
+    .uu-link
+      svg
+        right: -25px
+
+  .icon
+    position: relative
+    max-width: 64px
+    z-index: 102
+
+  h4
+    position: relative
+    color: $white
+    font-size: 20px
+    line-height: 22px
+    font-weight: 600
+    margin-bottom: 0px
+    z-index: 102
+
+  p
+    position: relative
+    margin-bottom: 20px
+    z-index: 102
+
+
++tablet
+
+  .up-next-tab .icon
+    max-width: 32px
+
+  .uu-hp-marquee-tabs
+    display: none
+
+
+  .uu-hp-marquee .slide .slide-content
+    top: auto
+
+
++customMax(1340px)
+
+  .up-next-title
+    display: none
+
+  .up-next-tab
+    position: relative
+    width: 33%
+    height: 200px
+
+
+// STATIC MARQUEE
+.uu-static-marquee
+  display: flex
+  flex-flow: row nowrap
+  align-items: stretch
+  justify-content: flex-start
+  width: 100%
+  background-size: cover
+  background-position: center center
+  background-repeat: no-repeat
+  .uu-marquee-callout
+    flex: 0 1 50%
+    display: flex
+    flex-flow: column
+    justify-content: center
+    align-items: center
+    text-align: center
+    background: rgba(0, 0, 0, .8)
+    color: $white
+    padding: 150px 30px
+    box-sizing: border-box
+    h1
+      font-family: $ff-vitesse
+      font-size: 44px
+      font-weight: 800
+      color: $uu_red
+      margin: 0px
+    h2
+      font-size: 24px
+      font-weight: 800
+      color: $white
+      margin: 0px
+      span
+        font-size: 16px
+        color: #B1B1B1
+        display: block
+    .uu-marquee-btns
+      margin: 20px auto
+      a
+        margin: 10px
+        &:hover
+          background-color: $uu_red !important
+          border-color: $uu_red !important
+    p
+      font-size: 13px
+      line-height: 16px
+      color: #DDD
+      a
+        color: $white
+
++tablet
+  .uu-static-marquee
+    .uu-marquee-callout
+      padding: 60px 20px
+      h1
+        font-size: 30px
+      h2
+        font-size: 18px
++customMax(800px)
+  .uu-static-marquee
+    align-items: center
+    justify-content: center
+    .uu-marquee-callout
+      flex: 1 1 100%
+
+
+
+// MARQUEE V3
+
+.uu-marquee
+  position: relative
+  min-height: 500px
+  height: 80vh
+  background-color: $uu_black
+  margin-bottom: 150px
+  +tablet
+    margin-bottom: 300px
+  +mobile
+    margin-bottom: 280px
+
+  .marquee-quick-links
+    position: absolute
+    left: 0
+    right: 0
+    display: flex
+    flex-flow: row nowrap
+    justify-content: center
+    align-items: flex-end
+    width: 100%
+    max-width: 1140px
+    margin: 0px auto
+    box-sizing: border-box
+    z-index: 2
+    bottom: -80px
+    +tablet
+      padding: 30px
+      flex-flow: row wrap
+      bottom: -250px
+
+    .marquee-quick-link-lg
+      flex: 0 1 45%
+      box-sizing: border-box
+      order: 2
+      text-align: left
+      background-color: $uu_red
+      background-image: linear-gradient(to bottom right, $uu_red, #900B21)
+      color: $white
+      padding: 20px 30px
+      margin: 5px
+      border-radius: 4px
+      +transition(all, .3s)
+      +shadow(0px, 10px, 20px, 0px, rgba(0, 0, 0, 0.1))
+      +tablet
+        order: 1
+        flex: 1 1 100%
+      a
+        color: $white
+      h2
+        color: $white
+        font-family: $ff-vitesse
+        margin: 5px 0px
+      .marquee-quick-link-date
+        font-size: 13px
+        font-family: $ff-vitesse
+      p
+        font-size: 18px
+        margin: 0px 0px 20px 0px
+        span
+          display: block
+          margin-top: 10px
+          font-size: 13px
+    .marquee-quick-links-sm
+      flex: 1 1 55%
+      display: flex
+      flex-flow: row nowrap
+      box-sizing: border-box
+      order: 1
+      +tablet
+        order: 2
+        flex: 1 1 100%
+      +mobile
+        display: none
+      .marquee-quick-link-sm
+        flex: 0 1 33.333%
+        text-align: center
+        box-sizing: border-box
+        text-align: center
+        background-color: $uu_red
+        color: $white
+        margin: 5px
+        border-radius: 4px
+        font-family: $ff-vitesse
+        font-size: 18px
+        line-height: 20px
+        +transition(all, .3s)
+        +shadow(0px, 10px, 20px, 0px, rgba(0, 0, 0, 0.1))
+        a
+          display: block
+          width: 100%
+          height: 100%
+          padding: 50px 20px
+          box-sizing: border-box
+          color: $white
+        &:hover
+          background-color: #900B21
+
+#bgvid
+  min-height: 100%
+  position: absolute
+  left: 50%
+  top: 50%
+  transform: translate(-50%, -50%)
+  min-width: 100%
+  z-index: 1
+  opacity: 0

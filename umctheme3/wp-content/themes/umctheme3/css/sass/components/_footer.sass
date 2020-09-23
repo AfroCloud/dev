@@ -1,0 +1,259 @@
+////////////////// FOOTER //////////////////
+
+#footer
+  padding: 0px
+  color: #D5D5D5
+  font-family: $ff-body
+
+// TOP FOOTER
+.uu-top-footer
+  background-color: $uu_black
+  padding: 15px
+  font-size: 12px
+
+  .uu-top-footer-container
+    display: flex
+    flex-flow: row nowrap
+    max-width: 1400px
+    padding: 40px 20px
+    margin: 0px auto
+
+    h3
+      margin-top: 30px
+      margin-bottom: 0px
+      color: $white
+      font-family: $ff-head
+      font-size: 13px
+      font-weight: 700
+      text-transform: uppercase
+
+    ul
+      margin: 0px
+      padding: 0px
+      li
+        h3
+          font-size: 12px
+          line-height: 2
+          font-family: $ff-body
+          margin: 0px
+          a
+            +transition(all, .3s)
+            color: #D5D5D5
+            text-decoration: none
+
+            &:hover
+              color: $uu_red
+
+    .uu-footer-menu
+      padding: 1%
+
+
+    .uu-footer-menu1
+      flex: 1 1 25%
+      order: 1
+      text-align: left
+
+      hr
+        margin-left: 0
+
+    .uu-footer-menu3
+      flex: 1 1 25%
+      order: 2
+      text-align: left
+      hr
+        margin-left: 0
+
+    .uu-footer-dept
+      margin-top: 30px
+      text-align: center
+      flex: 1 1 50%
+      order: 3
+      .uu-footer-dept-logo
+        img
+          max-width: 80px
+      .uu-footer-dept-name
+        font-size: 14px
+        font-weight: 700
+        color: #D5D5D5
+        margin: 0px
+      .uu-footer-dept-address, .uu-footer-dept-phone
+        font-size: 13px
+        line-height: 16px
+        color: #D5D5D5
+        margin: 0px
+
+    .uu-footer-menu2
+      flex: 1 1 25%
+      order: 4
+      text-align: right
+
+      hr
+        margin-right: 0
+
+    .uu-footer-menu4
+      flex: 1 1 25%
+      order: 5
+      text-align: right
+
+      hr
+        margin-right: 0
+
+  +tablet
+    .uu-top-footer-container
+      flex-flow: column nowrap
+
+      .uu-footer-dept
+        order: 1
+
+      .uu-footer-menu1
+        order: 2
+        text-align: center
+        hr
+          margin-left: auto
+
+      .uu-footer-menu2
+        order: 3
+        text-align: center
+        hr
+          margin-right: auto
+
+      .uu-footer-menu3
+        order: 4
+        text-align: center
+        hr
+          margin-left: auto
+
+      .uu-footer-menu4
+        order: 5
+        text-align: center
+        hr
+          margin-right: auto
+
+// BOTTOM FOOTER
+.uu-bottom-footer
+  background-color: $uu_gray
+
+  .uu-bottom-footer-container
+    display: flex
+    flex-flow: row nowrap
+    justify-content: center
+    align-items: center
+    align-content: center
+    max-width: 1400px
+    padding: 20px
+    margin: 0px auto
+
+    .uu-footer-logo
+      flex: 1 1 25%
+      align-self: flex-start
+      box-sizing: border-box
+      padding: 1%
+      text-align: left
+      order: 1
+      a
+        display: block
+        margin: 0px
+        height: 38px
+        width: 178px
+        background-image: url(../img/universityofutah.svg)
+        background-repeat: no-repeat
+        background-position: center left
+        background-size: contain
+        +transition(all, .3s)
+
+    .uu-footer-links
+      flex: 1 1 50%
+      box-sizing: border-box
+      padding: 1%
+      text-align: center
+      font-size: 13px
+      text-transform: uppercase
+      color: #847A7A
+      order: 2
+      p
+        margin: 0px
+      ul
+        margin: 0px
+        padding: 0px
+        list-style-type: none
+        li
+          position: relative
+          display: inline-block
+          margin-left: 5px
+          padding-left: 5px
+          &::before
+            position: absolute
+            top: 0
+            left: -5px
+            content: '/'
+          a
+            text-decoration: none
+            color: #847A7A
+            text-transform: uppercase
+            +transition(all, .3s)
+
+            &:hover
+              color: $white
+
+          &:first-child
+            margin-left: 0px
+            padding-left: 0px
+            &::before
+              content: ''
+
+    .uu-footer-social
+      flex: 1 1 25%
+      align-self: flex-end
+      box-sizing: border-box
+      padding: 1%
+      text-align: right
+      order: 3
+      ul
+        list-style-type: none
+        margin: 0px
+        padding: 0px
+        li
+          display: inline-block
+          margin: 0px 10px
+          padding-left: 0px
+          a
+            color: $white
+            font-size: 18px
+            +transition(all, .3s)
+            &:hover
+              color: $uu_red
+              svg
+                transform: scale(1.5)
+
+  +tablet
+    .uu-bottom-footer-container
+      flex-flow: column wrap
+      .uu-footer-logo, .uu-footer-links, .uu-footer-social
+        flex: 1 1 98%
+        padding: 20px 1%
+        align-self: center
+      .uu-footer-links
+        order: 3
+      .uu-footer-social
+        order: 2
+
+  +mobile
+    padding-bottom: 110px
+
+// BACK TO TOP BTN
+.back-to-top-btn
+  position: fixed
+  bottom: 12px
+  right: 0px
+  background-color: $light_gray
+  color: $uu_gray
+  padding: 15px
+  font-size: 24px
+  line-height: 1
+  border-radius: 2px
+  text-decoration: none
+  opacity: 0
+  +transition(all, .3s)
+  &.active
+    opacity: .8
+    right: 12px

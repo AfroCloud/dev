@@ -1,0 +1,79 @@
+////////////////// BUTTONS //////////////////
+
+// BTN
+a.btn, a.btn:visited, button.btn, input.btn
+  display: inline-block
+  margin: 10px auto
+  background-color: $uu_red
+  color: $white
+  text-decoration: none
+  text-align: center
+  text-transform: uppercase
+  font-size: 16px
+  font-weight: 700
+  border: 0px
+  border-radius: 2px
+  padding: 8px 20px
+  +shadow(0px, 0px, 0px, 0px, rgba(84, 117, 145, 0.1))
+  +transition(all, .15s)
+  &:hover, &:focus
+    background-color: $dark_red
+    transform: translateY(-1px)
+    +shadow(0px, 10px, 10px, 0px, rgba(84, 117, 145, 0.2))
+  &:focus
+    outline: 1px dotted $uu_red
+  &.ghost
+    background-color: transparent !important
+    border: 2px solid $uu_red
+    color: $uu_red
+  // COLORS & GHOST
+  &.black
+    background-color: $uu_gray
+    &:hover, &:focus
+      background-color: $uu_red
+    &.ghost
+      border: 2px solid $uu_gray
+      color: $uu_gray
+  &.gray
+    background-color: $gray
+    &:hover, &:focus
+      background-color: $uu_gray
+    &.ghost
+      border: 2px solid $gray
+      color: $gray
+  &.white
+    background-color: $white
+    color: $uu_red
+    &:hover, &:focus
+      background-color: $uu_red
+      color: $white
+    &.ghost
+      border: 2px solid $white
+      color: $white
+  // SIZES
+  &.sm
+    font-size: 14px
+    padding: 4px 15px
+  &.lg
+    font-size: 18px
+    padding: 12px 26px
+  &.xl
+    font-size: 21px
+    padding: 15px
+  &.full
+    display: block
+  // TYPE
+  &.icon
+    display: flex
+    flex-flow: column nowrap
+    justify-content: center
+    align-content: center
+    text-align: center
+    width: 50px
+    height: 50px
+    padding: 10px
+    border-radius: 50%
+    font-size: 30px
+    svg
+      flex: 1 1 auto
+      margin: 0px auto

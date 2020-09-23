@@ -1,0 +1,46 @@
+////////////////// SUBNAV //////////////////
+
+.uu-subnav-container
+  display: none
+  position: relative
+  flex: 0 1 250px
+  flex-flow: column nowrap
+  font-size: 13px
+  margin-top: 30px
+
+  .subnav-header
+    background-color: $uu_red
+    color: $white
+    padding: 15px
+
+    h4
+      font-size: 15px
+      font-weight: 700
+      color: $white
+      margin: 5px 0px
+
+
+  ul
+    background-color: $light_gray
+    
+    li
+      border-bottom: 1px solid #E6ECF2
+      box-sizing: border-box
+      border-collapse: collapse
+      &:last-child
+        border-bottom: 0px
+      &.current-menu-item
+        box-shadow: inset 4px 0 0 $uu_red
+        a
+          color: $uu_red
+          padding-left: 25px
+          &:hover
+            background-color: transparent
+      a
+        color: $uu_gray
+        display: block
+        padding: 10px 15px
+        +transition(all, .3s)
+        &:hover
+          padding-left: 25px
+          background-color: #EFF3F7

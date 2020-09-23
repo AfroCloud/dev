@@ -1,0 +1,8 @@
+# IGNORE MACOS FOLDER ATTR
+*.DS_Store
+
+# IGNORE NODE MODULES
+node_modules/
+
+# IGNORE SASS CACHE
+css/sass/.sass-cache/
